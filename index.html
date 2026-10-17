@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>عيادة سرت المركزية | حجز موعد</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">✚</span><span><b id="clinicName">عيادة سرت المركزية</b><small>رعايتك تبدأ من هنا</small></span></a>
+  <nav><button class="nav-link active" data-view="home">الرئيسية</button><button class="nav-link" data-view="my">حجوزاتي</button></nav>
+</header>
+<main class="container">
+  <section class="hero">
+    <div class="hero-copy"><span class="eyebrow">رعاية صحية أقرب إليك</span><h1>احجز موعدك الطبي<br><em>بكل سهولة</em></h1><p>اختر القسم والطبيب، واعرف دورك والوقت التقريبي لانتظارك قبل الوصول.</p><button class="primary-btn" id="browseBtn">استعرض الأقسام <span>←</span></button></div>
+    <div class="hero-art"><div class="hero-circle"><div class="cross">✚</div><div class="art-card"><span class="pulse">♥</span><div><b>رعايتك تهمنا</b><small>حجز منظم • انتظار أوضح</small></div></div></div></div>
+  </section>
+  <section id="homeView">
+    <div class="section-heading"><div><span class="eyebrow">الخدمات الطبية</span><h2>اختر القسم المناسب</h2><p>تصفح الأقسام المتاحة ثم اختر الطبيب.</p></div><span class="count-pill" id="deptCount">0 أقسام</span></div>
+    <div id="departments" class="department-grid"><div class="loading">جارٍ تحميل الأقسام...</div></div>
+    <div id="doctorsSection" class="hidden">
+      <div class="section-heading doctors-heading"><div><span class="eyebrow">الأطباء المتاحون</span><h2 id="selectedDeptTitle">الأطباء</h2><p>اختر الطبيب لعرض تفاصيل الدوام والانتظار.</p></div><button class="secondary-btn" id="backDepartments">← كل الأقسام</button></div>
+      <div id="doctors" class="doctor-grid"></div>
+    </div>
+  </section>
+  <section id="myView" class="hidden">
+    <div class="section-heading"><div><span class="eyebrow">ملف المراجع</span><h2>حجوزاتي</h2><p>الحجوزات المحفوظة على هذا الجهاز لهذا الاسم/رقم الهاتف.</p></div></div>
+    <form id="lookupForm" class="lookup-form"><label>الاسم الكامل<input id="lookupName" required placeholder="الاسم المسجل في الحجز"></label><label>رقم الهاتف المستخدم في الحجز<input id="lookupPhone" required placeholder="09xxxxxxxx" inputmode="tel"></label><button class="primary-btn">عرض حجوزاتي</button></form>
+    <div id="myBookings" class="booking-list"></div>
+  </section>
+</main>
+<footer><span>© <span id="year"></span> <b id="footerName">عيادة سرت المركزية</b></span><span>منظومة حجز المواعيد الطبية</span></footer>
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-panel"><button class="modal-close" id="closeModal" aria-label="إغلاق">×</button><div id="modalContent"></div></div></div>
+<div id="toast" class="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script src="app.js"></script>
+</body></html>
